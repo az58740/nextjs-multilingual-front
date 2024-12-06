@@ -1,0 +1,37 @@
+
+{
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "welcome":"خوش آمدید!",
+    "Name":"نام :",
+    "Email":"ایمیل :",
+    "Password":"رمز ورود :",
+    "ConfirmPassword":"تکرار کلمه عبور :",
+    "PasswordDescription":"رمز عبور باید حداقل 8 کاراکتر، یک کاراکتر خاص، یک حرف بزرگ و یک حرف کوچک داشته باشد. ",
+
+    "login":"ورود",
+    "logoTitle":"سیستم مدیریت کاربران",
+    "AccountLogoTitle":"مدیریت کاربر",
+    "AccountPageMessage":"لطفا برای ادامه وارد شوید.",
+    "GitHub":"ورود با GitHub",
+    "Google":"ورود با Google",
+
+    "CreateAccount" : "ایجاد حساب کاربری",
+    "CreateAccountPageMessage":"برای ایجاد یک حساب کاربری جدید، جاهای خالی را پر کنید",
+    "ComeBacke":" برگشت به صفحه ورود",
+
+    "ResetPassword": "بازنشانی پسوورد",
+
+    "ForgotPSW" :" فراموشی رمز ورود",
+    "ForgotPasswordMessage":"لطفا آدرس ایمیل خود را برای بازنشانی رمز عبور وارد کنید ",
+    "OR":"یا"
+
+
+
+
+
+
+
+
+
+
+}

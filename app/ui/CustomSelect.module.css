@@ -1,0 +1,51 @@
+.customSelect {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+  }
+  
+  .selectBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .selectedImage {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .arrow {
+    font-size: 1.2rem;
+  }
+  
+  .optionsContainer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background: white;
+    z-index: 10;
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .optionImage {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }

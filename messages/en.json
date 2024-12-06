@@ -1,0 +1,33 @@
+{
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "welcome":"Welcome",
+    "login":"Log in",
+    "logoTitle":"User Managment System",
+    "Name":"Name :",
+    "Email":"Email :",
+    "Password":"Password :",
+    "ConfirmPassword":"Confirm Password :",
+    "PasswordDescription":"The password must have at least 8 characters,one special character,one upper case letter and one lower case letter. ", 
+
+
+    "AccountLogoTitle":"Account Managment",
+    "AccountPageMessage":"Please log in to continue.",
+    
+    "GitHub":"Sign in with GitHub",
+    "Google":"Sign in with Google",
+    "CreateAccount" :"Create Account",
+    "CreateAccountPageMessage":"Fill in the blanks to create a new account",
+    "ComeBacke":" Go back to the Login page ",
+
+    "ResetPassword": "Password Reset",
+
+    "ForgotPSW":"Forgot Password ",
+    "ForgotPasswordMessage":"Please provide your email address for password reset ",
+    "OR":"or"
+
+
+
+    
+
+
+}

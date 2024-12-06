@@ -2,23 +2,44 @@
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
-import Link from 'next/link';
+import { Link } from "@/lib/i18n";
 import { generatePagination } from '@/app/lib/utils';
+import { usePathname } from "@/lib/i18n"
+import { useSearchParams } from "next/navigation";
+import { themeType } from '@/app/lib/theme';
 
-export default function Pagination({ totalPages }: { totalPages: number }) {
-  // NOTE: Uncomment this code in Chapter 11
+export default function Pagination({ 
+  totalPages,
+  theme
+}: 
+{ 
+  totalPages: number;
+  theme: themeType;
+}) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentPage = Number(searchParams.get('page')) || 1;
 
-  // const allPages = generatePagination(currentPage, totalPages);
+  const createPageURL = (pageNumber: number | string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set('page', pageNumber.toString());
+    return `${pathname}?${params.toString()}`;
+  };
+
+  // NOTE: comment in this code when you get to this point in the course
+
+  const allPages = generatePagination(currentPage, totalPages);
 
   return (
     <>
-      {/*  NOTE: Uncomment this code in Chapter 11 */}
+      {/* NOTE: comment in this code when you get to this point in the course */}
 
-      {/* <div className="inline-flex">
+      <div className="inline-flex">
         <PaginationArrow
           direction="left"
           href={createPageURL(currentPage - 1)}
           isDisabled={currentPage <= 1}
+          theme={theme}
         />
 
         <div className="flex -space-x-px">
@@ -37,6 +58,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
                 page={page}
                 position={position}
                 isActive={currentPage === page}
+                theme={theme}
               />
             );
           })}
@@ -46,8 +68,9 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           direction="right"
           href={createPageURL(currentPage + 1)}
           isDisabled={currentPage >= totalPages}
+          theme={theme}
         />
-      </div> */}
+      </div>
     </>
   );
 }
@@ -57,19 +80,25 @@ function PaginationNumber({
   href,
   isActive,
   position,
+  theme
 }: {
   page: number | string;
   href: string;
   position?: 'first' | 'last' | 'middle' | 'single';
   isActive: boolean;
+  theme: themeType;
 }) {
   const className = clsx(
-    'flex h-10 w-10 items-center justify-center text-sm border',
+    `flex h-10 w-10 items-center justify-center text-sm border
+      ${theme.border} ${theme.text}
+      ${(!isActive && position !== 'middle') && 
+        `${theme.hoverBorder} ${theme.hoverBg} ${theme.hoverText}`
+      }
+    `,
     {
       'rounded-l-md': position === 'first' || position === 'single',
       'rounded-r-md': position === 'last' || position === 'single',
       'z-10 bg-blue-600 border-blue-600 text-white': isActive,
-      'hover:bg-gray-100': !isActive && position !== 'middle',
       'text-gray-300': position === 'middle',
     },
   );
@@ -87,16 +116,21 @@ function PaginationArrow({
   href,
   direction,
   isDisabled,
+  theme
 }: {
   href: string;
   direction: 'left' | 'right';
   isDisabled?: boolean;
+  theme: themeType;
 }) {
   const className = clsx(
-    'flex h-10 w-10 items-center justify-center rounded-md border',
+    `flex h-10 w-10 items-center justify-center rounded-md border
+      ${theme.border} ${theme.text}
+      ${isDisabled && `${theme.border} ${theme.notActiveText}`}
+      ${!isDisabled && `${theme.hoverBorder} ${theme.hoverBg} ${theme.hoverText}`}
+    `,
     {
-      'pointer-events-none text-gray-300': isDisabled,
-      'hover:bg-gray-100': !isDisabled,
+      'pointer-events-none': isDisabled,
       'mr-2 md:mr-4': direction === 'left',
       'ml-2 md:ml-4': direction === 'right',
     },
