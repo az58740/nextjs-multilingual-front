@@ -8,7 +8,8 @@ export default async function Layout({ children }: { children: React.ReactNode }
   const userEmail = session?.user?.email!;
   const user = await getUser(userEmail);
   let theme: themeType;
-
+theme=systemDefault
+/*
   switch(user.theme) {
     case 'system':
       theme = systemDefault;
@@ -20,7 +21,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
       theme = lightTheme;
       break;
   }
-
+*/
   return (
     <div className={`flex h-screen flex-col md:flex-row md:overflow-hidden ${theme.bg}`}>
       <div className="w-full flex-none md:w-64">

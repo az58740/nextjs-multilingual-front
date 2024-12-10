@@ -9,7 +9,7 @@ export default async function LatestInvoices({theme}:{theme: themeType}) {
   const session = await auth();
   const userEmail = session?.user?.email!;
 
-  const latestInvoices = await fetchLatestInvoices(userEmail);
+  const latestInvoices = await fetchLatestInvoices('user@nextmail.com');
 
   return (
     <div className="flex w-full flex-col md:col-span-4">

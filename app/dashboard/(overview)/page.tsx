@@ -8,27 +8,34 @@ import { Metadata } from 'next';
 import { auth } from '@/auth';
 import { getUser } from '@/app/lib/data';
 import { darkTheme, lightTheme, systemDefault, themeType } from '@/app/lib/theme';
+import { fetchRevenue } from '@/app/lib/data';
+
 
 export const metadata: Metadata = {
   title: 'Dashboard',
 };
 export default async function Page() {
+  const revenue = await fetchRevenue();
   const session = await auth();
 const userEmail = session?.user?.email!;
+
 const user = await getUser(userEmail);
 let theme: themeType;
 
-switch(user.theme) {
-  case 'system':
-    theme = systemDefault;
-    break;
-  case 'dark':
-    theme = darkTheme;
-    break;
-  case 'light':
-    theme = lightTheme;
-    break;
-}
+theme=systemDefault
+/*
+  switch(user.theme) {
+    case 'system':
+      theme = systemDefault;
+      break;
+    case 'dark':
+      theme = darkTheme;
+      break;
+    case 'light':
+      theme = lightTheme;
+      break;
+  }
+*/
 
   return (
     <main>

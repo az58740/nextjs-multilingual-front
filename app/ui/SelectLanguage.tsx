@@ -19,15 +19,15 @@ export function SelectLanguage() {
 	}
 	
 	const labels: Record<AvailableLanguageTag, string> = {
-		en: "🇬🇧 English",
-		fa: "IR فارسی",
-		ar: "AR العربیه",
+		en: "English",
+		fa: "فارسی",
+		ar: "العربیه",
 	}
 	return (
-	<div className="relative inline-block text-left">
+	<div className="relative inline-block text-left md:text-base">
          <select
             className={clsx(
-	           'block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded shadow focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500',
+	           'ml-3 bg-blue-500 text-white border-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300  py-2 rounded-lg  hover:bg-blue-300',
 	            {
 	               'bg-left-bottom': direction[languageTag()]==="rtl",
                    'bg-right-bottom': direction[languageTag()]==="ltr",
@@ -47,7 +47,4 @@ export function SelectLanguage() {
 
 	)
 }
-
-
-
 
