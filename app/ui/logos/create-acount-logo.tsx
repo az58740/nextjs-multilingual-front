@@ -7,8 +7,8 @@ export default function CreateAcountLogo() {
     <div
       className={`${vazir.className} flex flex-row items-center leading-none text-white`}
     >
-      <UserPlusIcon className="h-8 w-8 rotate-[1deg]" />
-      <p className="text-[22px]">{m.CreateAccount()}</p>
+      <UserPlusIcon className="h-6 w-6 rotate-[1deg]" />
+      <p className="text-[18px]">{m.CreateAccount()}</p>
     </div>
   );
 }

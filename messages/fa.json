@@ -2,8 +2,18 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "welcome":"خوش آمدید!",
-    "Name":"نام :",
+    "Name":"نام و نام خانوادگی:",
+    "Phone":"شماره تلفن :",
     "Email":"ایمیل :",
+
+    "UserName":"نام کاربری :",
+    "SpecialUserName":" نام کاربری با انتخاب کاربر :",
+
+    "UserNameDescription":" نام کاربری را میتواند شماره موبایل،ایمیل ویا خودتان به اختیار وارد نمایید!",
+    "EmailButton":" ایمیل ",
+    "PhoneButton":"  موبایل ",
+    "SpecialButton":"  انتخاب کاربر",
+
     "Password":"رمز ورود :",
     "ConfirmPassword":"تکرار کلمه عبور :",
     "PasswordDescription":"رمز عبور باید حداقل 8 کاراکتر، یک کاراکتر خاص، یک حرف بزرگ و یک حرف کوچک داشته باشد. ",

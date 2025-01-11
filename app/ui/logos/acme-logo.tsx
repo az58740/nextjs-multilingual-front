@@ -1,5 +1,5 @@
 "use client"
-import {GlobeAltIcon,UserIcon } from '@heroicons/react/24/outline';
+import {UserGroupIcon,UserIcon } from '@heroicons/react/24/outline';
 import { lusitana,vazir } from '@/app/ui/fonts';
 import * as m from "@/paraglide/messages.js"
 import { Link } from '@/lib/i18n';
@@ -8,21 +8,16 @@ import { SelectLanguage } from '../SelectLanguage';
 import { languageTag } from '@/paraglide/runtime';
 
 export default function AcmeLogo() {
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedLanguage(event.target.value);
-    // You can also handle language change logic here (e.g., via i18n or context)
-  };
   return (
     <div
       className={`${vazir.className} bg-blue-400  text-white p-4 flex justify-between items-center rounded-lg  md:h-32 w-full `}
     >
        <div className="flex items-center space-x-2">
-       <GlobeAltIcon className="h-10 w-10 rotate-[15deg] hidden md:block" />
-       <GlobeAltIcon className="h-5 w-5 rotate-[15deg] block md:hidden" />
-       <p className="text-[18px] ml-1 gap-1 text-white:bold md:text-[25px]">{m.logoTitle()}</p>
+       <UserGroupIcon className="h-10 w-10  hidden md:block" />
+       <UserGroupIcon className="h-5 w-5 block md:hidden" />
+       <p className="text-[18px] ml-2 gap-1 text-white:bold md:text-[25px]">{m.logoTitle()}</p>
        </div> 
   <div className="hidden sm:flex items-center space-x-6">
   <SelectLanguage />

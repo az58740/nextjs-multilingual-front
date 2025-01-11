@@ -3,8 +3,19 @@
     "welcome":"Welcome",
     "login":"Log in",
     "logoTitle":"User Managment System",
-    "Name":"Name :",
+    "Name":"Full Name :",
+    "Phone":"Phone number :",
     "Email":"Email :",
+
+    "UserName":"User Name :",
+    "SpecialUserName":" Special User Name :",
+
+    "UserNameDescription":"You can enter your username as your mobile number, email address, or whatever you want!.",
+    "EmailButton":" Email ",
+    "PhoneButton":" Phone Number ",
+    "SpecialButton":" Special UserName ",
+
+
     "Password":"Password :",
     "ConfirmPassword":"Confirm Password :",
     "PasswordDescription":"The password must have at least 8 characters,one special character,one upper case letter and one lower case letter. ", 

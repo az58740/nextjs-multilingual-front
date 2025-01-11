@@ -10,30 +10,46 @@ import jwt from 'jsonwebtoken';
 import nodemailer from 'nodemailer';
 import type { User } from '@/app/lib/definitions';
 import { unstable_noStore } from 'next/cache';
+import { error } from 'console';
+import { languageTag } from '@/paraglide/runtime';
 
 // A regular expression to check for valid email format
-const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+const emailRegex = /^$|^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 // A regular expression to check for at least one special character, one upper case 
 // letter, one lower case letter and at least 8 characters
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[-_!@#$%^&*]).{8,}$/;
+//A regular expression for a phone number that may be empty or must have at least 10 characters,
+const phoneRegex = /^(?:.{0,4}|.{10,})$/;
 
+const phonenumberSchema = z
+  .string()
+  .refine((value) => value.length <= 3 || value.length >= 10, {
+    message: "Phone number must be at least 10 characters long if provided",
+  });
 // A Zod schema for the name field
 const nameSchema = z.string().min(3, "Name must have at least 3 characters");
 
 // A Zod schema for the email field
 const emailSchema = z.string().regex(emailRegex, "Invalid email format");
 
+
 // A Zod schema for the password field
 const passwordSchema = z.string().regex(passwordRegex, `
   The password does not meet the minimum security requirements.
 `);
 
+
+const usernameSchema=z.string().min(6,"Username must have at least 10 characters");
+
 // A Zod schema for the object with name, email and password fields
 const UserSchema = z.object({
-  name: nameSchema,
-  email: emailSchema,
-  password: passwordSchema
+   name: nameSchema,
+   email: emailSchema,
+   phone:phonenumberSchema,
+   username:usernameSchema,
+   password: passwordSchema
+
   // theme: z.coerce.number({
   //   invalid_type_error: 'Please select a theme',
   // })
@@ -77,6 +93,8 @@ export type UserState = {
   errors?: {
     name?: string[];
     email?: string[];
+    phone?:string[];
+    username?:string[];
     password?: string[];
     confirmPassword?: string[];
     isoauth?: string[];
@@ -131,6 +149,7 @@ export async function createInvoice(prevState: InvoiceState, formData: FormData)
   }
 
   redirect('/dashboard/invoices');
+  
 }
 
 export async function updateInvoice(
@@ -256,14 +275,26 @@ export async function deleteCustomer(id: string) {
   }
 }
 
+
+
 export async function createUserWithCredentials(prevState: UserState, formData: FormData) {
+ 
+  console.log(formData.get('name'))
+  console.log(formData.get('email'))
+ console.log(formData.get('username'))
+ console.log(formData.get('phoneNumber'))
+ console.log(formData.get('password'))
+
+
   // Validate form using Zod
   const validatedFields = UserSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
+    phone:formData.get('phoneNumber'),
+    username:formData.get('username'),
     password: formData.get('password'),
   });
- 
+  
   // If form validation fails, return errors early. Otherwise, continue.
   if (!validatedFields.success) {
     return {
@@ -272,15 +303,23 @@ export async function createUserWithCredentials(prevState: UserState, formData: 
     };
   }
 
-  const { name, email, password } = validatedFields.data;
+  const { name, email,phone,username ,password } = validatedFields.data;
   const confirmPassword = formData.get('confirm-password');
   if (password != confirmPassword) {
     return {
       message: 'Passwords are different.'
     };
   }
-
   const hashedPassword = await bcrypt.hash(password, 10);
+
+  if (validatedFields.success) {
+    redirect(`/login`);
+    return {
+     error:null,
+      message: 'Success!',
+    };
+  }
+/*
   const account = await sql`SELECT * FROM users WHERE email=${email}`;
 
   if (account.rowCount) {
@@ -307,6 +346,8 @@ export async function createUserWithCredentials(prevState: UserState, formData: 
   }
   
   redirect('/login?account-created=true');
+  */
+
 }
 
 export async function authenticateWithCredentials(

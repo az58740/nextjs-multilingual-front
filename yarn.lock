@@ -415,6 +415,13 @@
   dependencies:
     undici-types "~5.26.4"
 
+"@types/nodemailer@^6.4.17":
+  version "6.4.17"
+  resolved "https://registry.npmjs.org/@types/nodemailer/-/nodemailer-6.4.17.tgz"
+  integrity sha512-I9CCaIp6DTldEg7vyUTZi8+9Vo0hi1/T8gv3C89yk1rSAAzoKQ8H8ki/jBYJSFoH/BisgLP8tkZMlQ91CIquww==
+  dependencies:
+    "@types/node" "*"
+
 "@types/parse-json@^4.0.0":
   version "4.0.2"
   resolved "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.2.tgz"
@@ -440,6 +447,13 @@
   integrity sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==
   dependencies:
     "@types/react" "*"
+
+"@types/react-select@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@types/react-select/-/react-select-5.0.0.tgz"
+  integrity sha512-vddLcBpzUMVpVNmnBtpC5cyZ2ajaHx/g6SHUo6lmMw0FIiOzrtmoSQ4UI6TRl+sm8TGGT+Oir8NRMZfYQtgr8Q==
+  dependencies:
+    react-select "*"
 
 "@types/react-transition-group@^4.4.0":
   version "4.4.11"
@@ -1814,7 +1828,7 @@ react-country-flag@^3.1.0:
   resolved "https://registry.npmjs.org/react-country-flag/-/react-country-flag-3.1.0.tgz"
   integrity sha512-JWQFw1efdv9sTC+TGQvTKXQg1NKbDU2mBiAiRWcKM9F1sK+/zjhP2yGmm8YDddWyZdXVkR8Md47rPMJmo4YO5g==
 
-"react-dom@^16.8 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.0.0, "react-dom@>= 16.8.0", react-dom@>=16.6.0, react-dom@>=18, react-dom@19.0.0-rc-f38c22b244-20240704, react-dom@19.0.0-rc.0:
+"react-dom@^16.8 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", react-dom@^18.0.0, "react-dom@>= 16.8.0", react-dom@>=16.6.0, react-dom@>=18, react-dom@19.0.0-rc-f38c22b244-20240704, react-dom@19.0.0-rc.0:
   version "19.0.0-rc-f38c22b244-20240704"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-19.0.0-rc-f38c22b244-20240704.tgz"
   integrity sha512-g89q2pf3irdpKFUMgCQgtxgqo3TSV1k1J6Sc8God4FwfxuNmAOOthkijENe5XZe6VeV1tor9DPzpjdTD9EyvNw==
@@ -1826,10 +1840,10 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-select@^5.8.3:
-  version "5.8.3"
-  resolved "https://registry.npmjs.org/react-select/-/react-select-5.8.3.tgz"
-  integrity sha512-lVswnIq8/iTj1db7XCG74M/3fbGB6ZaluCzvwPGT5ZOjCdL/k0CLWhEK0vCBLuU5bHTEf6Gj8jtSvi+3v+tO1w==
+react-select@*, react-select@^5.9.0:
+  version "5.9.0"
+  resolved "https://registry.npmjs.org/react-select/-/react-select-5.9.0.tgz"
+  integrity sha512-nwRKGanVHGjdccsnzhFte/PULziueZxGD8LL2WojON78Mvnq7LdAMEtu2frrwld1fr3geixg3iiMBIc/LLAZpw==
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.4.0"
@@ -1839,7 +1853,7 @@ react-select@^5.8.3:
     memoize-one "^6.0.0"
     prop-types "^15.6.0"
     react-transition-group "^4.3.0"
-    use-isomorphic-layout-effect "^1.1.2"
+    use-isomorphic-layout-effect "^1.2.0"
 
 react-toastify@^10.0.6:
   version "10.0.6"
@@ -1858,7 +1872,7 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@*, "react@^16.8 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18 || ^19", react@^18.0.0, "react@^18.2.0 || ^19.0.0-0", "react@>= 16", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0", react@>=16, react@>=16.6.0, react@>=16.8.0, react@>=18, react@19.0.0-rc-f38c22b244-20240704, react@19.0.0-rc.0:
+react@*, "react@^16.8 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^18 || ^19", react@^18.0.0, "react@^18.2.0 || ^19.0.0-0", "react@>= 16", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0", react@>=16, react@>=16.6.0, react@>=16.8.0, react@>=18, react@19.0.0-rc-f38c22b244-20240704, react@19.0.0-rc.0:
   version "19.0.0-rc-f38c22b244-20240704"
   resolved "https://registry.npmjs.org/react/-/react-19.0.0-rc-f38c22b244-20240704.tgz"
   integrity sha512-OP8O6Oc1rdR9IdIKJRKaL1PYd4eGkn6f88VqiygWyyG4P4RmPPix5pp7MatqSt9TnBOcVT+lBMGoVxRgUFeudQ==
@@ -2286,10 +2300,10 @@ use-debounce@^10.0.1:
   resolved "https://registry.npmjs.org/use-debounce/-/use-debounce-10.0.3.tgz"
   integrity sha512-DxQSI9ZKso689WM1mjgGU3ozcxU1TJElBJ3X6S4SMzMNcm2lVH0AHmyXB+K7ewjz2BSUKJTDqTcwtSMRfB89dg==
 
-use-isomorphic-layout-effect@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.2.tgz"
-  integrity sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==
+use-isomorphic-layout-effect@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.2.0.tgz"
+  integrity sha512-q6ayo8DWoPZT0VdG4u3D3uxcgONP3Mevx2i2b0434cwWBoL+aelL1DzkXI6w3PhTZzUeR2kaVlZn70iCiseP6w==
 
 utf-8-validate@>=5.0.2, utf-8-validate@6.0.3:
   version "6.0.3"
